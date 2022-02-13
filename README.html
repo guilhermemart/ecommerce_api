@@ -1,0 +1,72 @@
+<head></head>
+<body>
+<h1># ecommerce_api </h1>
+<h2>Evaluating API</h2>
+
+<h2>Including new product:</h2>
+    <p>At Postman:</p>
+    <p>POST http://localhost:8080/product<p>
+    <p>header > Content-Type: application/json<p>
+    <p>use request.body to mount the product</p>
+    <p>body > </p>
+    <p>    {</p>
+    <p>    "id": "unique id",</p>
+    <p>    "name": "product name",</p>
+    <p>    "total_stock": number int,</p>
+    <p>    "passing_stock": number int,</p>
+    <p>    "price_from": number float,</p>
+    <p>    "price_for": number float</p>
+    <p>    }</p>
+    <p>    example:</p>
+    <p>    {</p>
+    <p>    "id": "6",</p>
+    <p>    "name": "Djacket",</p>
+    <p>    "total_stock": 10,</p>
+    <p>    "passing_stock": 5,</p>
+    <p>    "price_from": 9.99,</p>
+    <p>    "price_for": 5.00</p>
+    <p>    }</p>
+    
+<h3>Search for a product by its id</h3>
+<p>    At Postman:</p>
+<p>    GET http://localhost:8080/product/:id</p>
+<p>    header > Content-Type: application/json</p>
+<p>    example http://localhost:8080/product/6</p>
+<hr>
+<h3>View all products at db</h3>
+<p>    At Postman:</p>
+<p>    GET http://localhost:8080/products</p>
+<p>    header > Content-Type: application/json</p>
+<p>    example http://localhost:8080/products</p>
+<hr>
+<h3>Update a specific product from db:</h3>
+<p>    At Postman:</p>
+<p>    PUT http://localhost:8080/product/:id</p>
+<p>    header > Content-Type: application/json</p>
+<p>    use request.body to mount the product as if it is new</p>
+<p>    body > </p>
+<p>        {</p>
+<p>        "id": "new_unique id",</p>
+<p>        "name": "new_product name",</p>
+<p>        "total_stock": number int,</p>
+<p>        "passing_stock": number int,</p>
+<p>        "price_from": number float,</p>
+<p>        "price_for": number float</p>
+<p>        }</p>
+<p>        example:</p>
+<p>        {</p>
+<p>        "id": "7",</p>
+<p>        "name": "Djacket_2",</p>
+<p>        "total_stock": 11,</p>
+<p>        "passing_stock": 5,</p>
+<p>        "price_from": 9.99,</p>
+<p>        "price_for": 5.00</p>
+<p>        }</p>
+<p>    Obs: Its possible to edit the old id, but its protected to continues been unique</p>
+<hr>
+<h3>Delete permanently a product from db</h3>
+<p>    At Postman:</p>
+<p>    DELETE http://localhost:8080/product/:id</p>
+<p>    example:</p>
+<p>    DELETE http://localhost:8080/product/7</p>
+</body>
